@@ -13,7 +13,21 @@ Your continued use of our website will be regarded as acceptance of our practice
 
 ### Information we collect
 
-For a better experience, while using our products and services, we may require you to provide us with certain personally identifiable information, including but not limited to: your name, your e-mail address and others.
+- Your name
+- Your e-mail address
+- Your usage data
+- Others, depending on scope
+
+### How we collect it
+
+- When you are visiting or using our products or services
+- When you are contacting us
+- WHen you are submitting information through a form, when it's required
+- When you sign in using third-party provider
+- When you sign in for the first time
+- When you log in to our product or services
+- When you subscribe/unsubscribe to notifications or events, sent by our services
+- When you participate in our testing programm and/or provide feedback or complete customer surveys of our services
 
 Some of our products and services use third party services that may collect information used to identify you
 Here are the links to privacy policy of third party service providers used by our products and services:
@@ -22,20 +36,53 @@ Here are the links to privacy policy of third party service providers used by ou
 - [Firebase Privacy Policy](https://firebase.google.com/support/privacy/)
 - [Google Cloud Privacy Policy](https://cloud.google.com/security/privacy/)
 
-### Cookies and Localstorage
+### What are your data protection rights?
 
-Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
+We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
+
+**The right to access** – You have the right to request us copies of your personal data. We may charge you a small fee for this service.
+
+**The right to rectification** – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request us to complete the information you believe is incomplete.
+
+**The right to erasure** – You have the right to request that we erase your personal data, under certain conditions.
+
+**The right to restrict processing** – You have the right to request that we restrict the processing of your personal data, under certain conditions.
+
+**The right to object to processing** – You have the right to object to us processing of your personal data, under certain conditions.
+
+**The right to data portability** – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+
+If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at our email below
+
+### Cookies
+
+Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit our websites, we may collect information from you automatically through cookies or similar technology.
+
+For further information, visit allaboutcookies.org
 
 Our products and services do not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this product or service.
+
+### How do we use these cookies
+
+- Keeping you signed in
+- Understanding how you use our products or services
+
+### What type of cookies we use
+
+**Functionality** - We use these cookies so that we recognize you on our products or services and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.
+
+### How to manage cookies
+
+You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser. However, in a few cases, some of our products or services's features may not function as a result.
 
 ### Service Providers
 
 We may employ third-party companies and individuals due to the following reasons:
 
-- To facilitate our Service;
-- To provide the Service on our behalf;
-- To perform Service-related services; or
-- To assist us in analyzing how our Service is used.
+- To facilitate our Service
+- To provide the Service on our behalf
+- To perform Service-related services or
+- To assist us in analyzing how our Service is used
 
 We want to inform users of this product or service, that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
 
