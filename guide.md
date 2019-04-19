@@ -1,77 +1,66 @@
-# Setting Up Dialogflow Gateway
+# Dialogflow Gateway Guide
+
+Follow this guide, if you want to setup your Dialogflow Gateway. You can find more guides and tutorials on [our Medium Blog](https://medium.com/@ushakovhq). Starting April 2019, you will need to configure and upload your service account keys manually, because of Google's limitation of 100 insecure sign-ups and permissive Google Cloud scopes, that our client used before
+
+## Step 1: Getting your Agent's Service Account
+
+First of all we need to know, whats the service account, that our Agent uses. To find that out, go to the [Dialogflow Console](console.dialogflow.com), select your Agent and press on cogs icon (Settings):
+
+![](https://i.imgur.com/G49wHXs.png)
+
+Now, if you are on the Settings Page, you need to scroll down to the "Google Project" section and **remember your Service Account**
+
+![](https://i.imgur.com/52RFVAP.png)
+
+## Step 2: Setting permissions of Agent's Service Account
+
+Visit [Google Cloud IAM Dashboard](https://console.cloud.google.com/iam-admin). Make sure, you have selected the Google Cloud Project, that is associated with your Dialogflow Agent
+
+![](https://i.imgur.com/mNjcVFQ.png)
+
+Find the service account of your Agent in the list and press on the pen icon
+
+![](https://i.imgur.com/vuVOGKt.png)
+
+Now in the "Edit Permissions" window, make sure you have selected the right Service Account and the right Project. When you have checked that, add the `Dialogflow API Client` and `Dialogflow API Reader` Roles to your Service Account and press on "Save"
+
+
+## Step 3: Getting the keys
+
+Go to the Service Accounts Page, find your Service Account in the list and press on 3 dots. In the menu, select "Create key"
+
+![](https://i.imgur.com/MmJUT2A.png)
+
+You are going to see the "Create private key" window. Set the "Key type" to "JSON" and press on "Create"
+
+![](https://i.imgur.com/lFzG6QY.png)
+
+Now, the keys should be downloaded to your default Downloads folder. Make sure to check that as well
+
+![](https://i.imgur.com/eDkBkGS.png)
+
+Now, when you have the keys for your agent, with the correct permissions you are ready to setup Dialogflow Gateway
+
+## Step 4: Uploading your keys to Dialogflow Gateway
 
 Go to the [Dialogflow Gateway Console](https://dialogflow.cloud.ushakov.co/console)
 
-And you will see the following Sign In screen:
+Sign in with your Google Account
 
-![](https://i.imgur.com/bse2Akc.png)
+![](https://i.imgur.com/Ei0ibBj.png)
 
-**Note**: some adblocks hide the Google Sign-In button. Please disable your adblock, if you experience the issue
+And you will see the console
 
-Press on the "Sign in with Google" button and you will see similar account picker:
+![](https://i.imgur.com/JXCS5qk.png)
 
-![](https://i.imgur.com/6kjJPPR.png)
+On the "Agents" section press on the "Upload" button and select your keys
 
-Choose the account, you used to create your Dialogflow Agent with
+![](https://i.imgur.com/bxQsK3h.jpg)
 
-**Note**: some browsers (like Safari in my case) block popups. Please allow popups on the website and log in and out again in order to proceed
+Your agent should now appear on the "Agents" list. To find your connection information and settings, press on the "Manage" button
 
-And you will then see this page:
+![](https://i.imgur.com/eWvsRty.png)
 
-![](https://i.imgur.com/KkfA3bn.png)
+# Have fun!
 
-This may happen, because Google needs to verify my app (if it hasn't done it yet). You can still continue by pressing on "Advanced" and "Go to Dialogflow Gateway (unsafe)"
-
-Then you will see this:
-
-![](https://i.imgur.com/MvUNN7u.png)
-
-Press on "Allow" in order to allow the application to access your Google Cloud. Google Cloud is used for following reasons:
-
-- Listing your Google Cloud Projects
-- Listing IAM Policies for projects
-- Updating IAM Policies for projects
-- Creating Service Account Keys
-- (Overall) Connecting your Google Cloud Project to Dialogflow Gateway
-
-You then may see an additional confirmation, like this:
-
-![](https://i.imgur.com/6ZED5Ur.png)
-
-Make sure, to press "Allow" here as well
-
-When you are ready with all of that, you will see the console:
-
-**Note**: it may take a second to load your Google Cloud Projects (or two)
-
-**Note**: non-Dialogflow-V2 Projects will not link, no matter how hard you try
-
-**Note**: you may not see your projects, if you have not allowed popups and finished the previous step
-
-![](https://i.imgur.com/AEFdvaH.png)
-
-This list shows your Google Cloud Projects.
-
-In order to link your Dialogflow Agent to Dialogflow Gateway, press on "Link" button, on the associated Google Cloud project.
-
-The process may take a couple seconds to finish, so be patient. When its finished, the link icon will turn green and you will see the "Manage" button.
-
-Then, press on the "Manage" Button and you will see this view:
-
-![](https://i.imgur.com/G8fHU4l.png)
-
-Save the Gateway URL, because we will need it for later
-
-The UI URL is for the managed version of Dialogflow for Web v2, for people, who just want it to work (for example in iframe) without additional steps, described below
-
-Optionally, you can also change your Gateway Settings:
-
-![](https://i.imgur.com/Wp37Ycm.png)
-
-When you specify the Webhook URL, the Dialogflow Gateway will send a POST request to it, when it is being triggered. Please note: it doesn't have anything to do with the Dialogflow Webhooks.
-
-You can also specify the sources, which the formatting option will respect. The formatting option will then only return the components and messages for the specified Platforms (for example if you select Facebook, it will only return Facebook components for your Intents)
-
-You can also unlink the project from Dialogflow Gateway service
-
-**Note**: Unlinking your project, does not remove the service account keys and reset IAM Policies, you have to do it yourself (if you want to). Also note, that unlinking your project does not reset the quota or unblock the project
+If you have any questions, [contact me](https://i.ushakov.co/#/contact)
