@@ -1,47 +1,52 @@
 # Dialogflow Gateway Guide
 
-Follow this guide, if you want to setup your Dialogflow Gateway. You can find more guides and tutorials on [our Medium Blog](https://medium.com/@ushakovhq). Starting April 2019, you will need to configure and upload your service account keys manually, because of Google's limitation of 100 insecure sign-ups and permissive Google Cloud scopes, that our client used before
+Follow this guide, if you want to setup your Dialogflow Gateway. You can find more guides and tutorials on [our Medium Blog](https://medium.com/@ushakovhq).
 
-## Step 1: Getting your Agent's Service Account
+If you have any questions or need help to complete these steps, please contact [Google Cloud Support](https://cloud.google.com/support-hub/)
 
-First of all we need to know, whats the service account, that our Agent uses. To find that out, go to the [Dialogflow Console](console.dialogflow.com), select your Agent and press on cogs icon (Settings):
+## Step 1: Getting Service Account
 
-![](https://i.imgur.com/G49wHXs.png)
+Service Accounts represent identities of a Service (much like user account represents identity of a user). Dialogflow Gateway requires a Service Account, to authenticate the requests, as they were triggered from your service. In this step, we will generate such Service Account for your Google Cloud project, that is connected to your Agent.
 
-Now, if you are on the Settings Page, you need to scroll down to the "Google Project" section and **remember your Service Account**
+Visit [Google Cloud IAM](https://console.cloud.google.com/iam-admin/serviceaccounts)
 
-![](https://i.imgur.com/52RFVAP.png)
+Make sure you are on the "Service Accounts" Page and have selected the Project, which your Dialogflow Agent is associated with
 
-## Step 2: Setting permissions of Agent's Service Account
+![](https://i.imgur.com/GCwRrvB.png)
 
-Visit [Google Cloud IAM Dashboard](https://console.cloud.google.com/iam-admin). Make sure, you have selected the Google Cloud Project, that is associated with your Dialogflow Agent
+Then, press on the "Create Service Account" button
 
-![](https://i.imgur.com/mNjcVFQ.png)
+Enter the name of your Service Account and press on "Create"
 
-Find the service account of your Agent in the list and press on the pen icon
+![](https://i.imgur.com/xa6wYs7.png)
 
-![](https://i.imgur.com/vuVOGKt.png)
+## Step 2: Granting permissions to the Service Account
 
-Now in the "Edit Permissions" window, make sure you have selected the right Service Account and the right Project. When you have checked that, add the `Dialogflow API Client` and `Dialogflow API Reader` Roles to your Service Account and press on "Save"
+You have now successfully generated a service account! You just need to give it some permissions, so it can access certain resources of your Google Cloud project.
 
+We will need thoose permissions: **"Dialogflow API Client"** and **"Dialogflow API Reader"**
 
-## Step 3: Getting the keys
+It's important, that you set these permissions, otherwise your integration may not work as expected
 
-Go to the Service Accounts Page, find your Service Account in the list and press on 3 dots. In the menu, select "Create key"
+![](https://i.imgur.com/zgAdbLO.png)
 
-![](https://i.imgur.com/MmJUT2A.png)
+Set the Roles and press on "Continue"
 
-You are going to see the "Create private key" window. Set the "Key type" to "JSON" and press on "Create"
+## Step 3: Getting the keys of the Service Account
 
-![](https://i.imgur.com/lFzG6QY.png)
+In the this step we will generate the keys of our Service Account, which we will later give Dialogflow Gateway access to.
 
-Now, the keys should be downloaded to your default Downloads folder. Make sure to check that as well
+Press on "Create Key Button" and in the "Create Key" window set the "Key type" to "JSON". Then, press on "Create".
+
+![](https://i.imgur.com/0fcsaWy.png)
+
+The keys should been downloaded to your default Downloads folder. Make sure to check that as well.
 
 ![](https://i.imgur.com/eDkBkGS.png)
 
-Now, when you have the keys for your agent, with the correct permissions you are ready to setup Dialogflow Gateway
+Now, when you have the keys with the correct permissions, you are ready to setup Dialogflow Gateway
 
-## Step 4: Uploading your keys to Dialogflow Gateway
+## Final Step: Uploading your keys to Dialogflow Gateway
 
 Go to the [Dialogflow Gateway Console](https://dialogflow.cloud.ushakov.co/console)
 
@@ -53,7 +58,7 @@ And you will see the console
 
 ![](https://i.imgur.com/JXCS5qk.png)
 
-On the "Agents" section press on the "Upload" button and select your keys
+In the "Agents" section press on the "Upload" button and select your keys
 
 ![](https://i.imgur.com/bxQsK3h.jpg)
 
@@ -61,6 +66,4 @@ Your agent should now appear on the "Agents" list. To find your connection infor
 
 ![](https://i.imgur.com/eWvsRty.png)
 
-# Have fun!
-
-If you have any questions, [contact me](https://i.ushakov.co/#/contact)
+## Done!

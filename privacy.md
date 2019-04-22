@@ -1,7 +1,5 @@
 # Privacy
 
-Contents
-
 - [Summary](#summary)
 - [Information](#information)
     - [Information we collect](#information-we-collect)

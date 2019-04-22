@@ -1,7 +1,5 @@
 # API Documentation
 
-Contents
-
 - [Basics](#basics)
     - [Response Codes](#response-codes)
     - [Endpoints](#endpoints)
