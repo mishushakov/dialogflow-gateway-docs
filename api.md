@@ -47,7 +47,9 @@ https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co
 
 #### Endpoint Params
 
-`APP_ID` - Required, Application Identifier
+| Param | Description |
+|--------|----------------------------------|
+| APP_ID | Required, Application Identifier |
 
 #### Example Endpoint
 
@@ -120,6 +122,7 @@ POST https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co/<SESSION_ID>?format=<b
 | Option | Values | Description |
 |--------|-----------------|--------------------------------------------|
 | format | `true`, `false` | Optional. Enable/Disable formatting option |
+| newFormat | `true`, `false` | Optional. Enable/Disable new formatting option |
 
 #### Request Body
 
