@@ -16,11 +16,8 @@
     - [Detecting Intents](#detecting-intents)
         - [Request](#request-1)
         - [Request Params](#request-params-1)
-        - [Request Options](#request-options)
         - [Request Body](#request-body)
-        - [Request Fields](#request-fields)
         - [Response Body](#response-body-1)
-        - [Response Fields](#response-fields)
         - [Example Request](#example-request-1)
         - [Example Response](#example-response-1)
 
@@ -32,10 +29,10 @@
 |-----------|------------------------------------------------------------------------|
 | 200       | Request was successful                                                 |
 | 400       | Request Body or Session ID is invalid and/or missing                   |
-| 403       | Your Integration was blocked or Service Account Key is no longer valid |
-| 404       | Your Integration was not found                                         |
+| 403       | Integration was blocked or Service Account Key is no longer valid      |
+| 404       | Integration was not found                                              |
 | 500       | Internal Server Error                                                  |
-| 503       | The service is unavailable at the moment                               |
+| 503       | The service is unavailable                                             |
 
 ### Endpoints
 
@@ -75,7 +72,7 @@ GET https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co
 
 #### Response Body
 
-If successful, the response body contains an instance of [Agent](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/Agent)
+If successful, the response body contains an instance of [Agent](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.Agent)
 
 #### Example Request
 
@@ -117,66 +114,13 @@ POST https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co/<SESSION_ID>?format=<b
 | APP_ID | Required, Application Identifier |
 | SESSION_ID | Required. The name of the session this query is sent to. It can be a random number or some type of user identifier. The length of the session ID must not exceed 36 bytes |
 
-#### Request Options
-
-| Option | Values | Description |
-|--------|-----------------|--------------------------------------------|
-| format | `true`, `false` | Optional. Enable/Disable formatting option |
-| newFormat | `true`, `false` | Optional. Enable/Disable new formatting option |
-
 #### Request Body
 
-```json
-{
-  "queryParams": {
-    object(QueryParameters)
-  },
-  "queryInput": {
-    object(QueryInput)
-  },
-  "outputAudioConfig": {
-    object(OutputAudioConfig)
-  },
-  "inputAudio": string
-}
-```
-
-#### Request Fields
-
-| Field | Reference |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| queryParams | object([QueryParameters](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/projects.agent.sessions/detectIntent#QueryParameters)) Optional. The parameters of this query. |
-| queryInput | object([QueryInput](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/projects.agent.sessions/detectIntent#QueryInput)) Required. The input specification. It can be set to: An audio config which instructs the speech recognizer how to process the speech audio, a conversational query in the form of text, or an Event that specifies which intent to trigger. |
-| outputAudioConfig | object([OutputAudioConfig](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/projects.agent.sessions/detectIntent#OutputAudioConfig)) Optional. Instructs the speech synthesizer how to generate the output audio.If this field is not set and agent-level speech synthesizer is not configured, no output audio is generated. |
-| inputAudio | string([bytes](https://developers.google.com/discovery/v1/type-format) format) Optional. The natural language speech audio to be processed. This field should be populated iff queryInput is set to an input audio config. A single request can contain up to 1 minute of speech audio data. A base64-encoded string. |
+[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
 
 #### Response Body
 
-```json
-{
-  "responseId": string,
-  "queryResult": {
-    object(QueryResult)
-  },
-  "webhookStatus": {
-    object(Status)
-  },
-  "outputAudio": string,
-  "outputAudioConfig": {
-    object(OutputAudioConfig)
-  }
-}
-```
-
-#### Response Fields
-
-| Field | Reference |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| responseId | string The unique identifier of the response. It can be used to locate a response in the training example set or for reporting issues. |
-| queryResult | object([QueryResult](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/projects.agent.sessions/detectIntent#QueryResult)) The selected results of the conversational query or event processing. See alternativeQueryResults for additional potential results. |
-| webhookStatus | object([Status](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/projects.operations#Status)) Specifies the status of the webhook request. |
-| outputAudio | string([bytes](https://developers.google.com/discovery/v1/type-format) format) The audio data bytes encoded as specified in the request. Note: The output audio is generated based on the values of default platform text responses found in the queryResult.fulfillment_messages field. If multiple default text responses exist, they will be concatenated when generating audio. If no default platform text responses exist, the generated audio content will be empty. A base64-encoded string. |
-| outputAudioConfig | object([OutputAudioConfig](https://cloud.google.com/dialogflow-enterprise/docs/reference/rest/v2/projects.agent.sessions/detectIntent#OutputAudioConfig)) The config used by the speech synthesizer to generate the output audio. |
+[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentResponse)
 
 #### Example Request
 
