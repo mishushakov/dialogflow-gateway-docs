@@ -189,7 +189,7 @@ const readline = require('readline').createInterface({
 const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
 const session = 'dialogflow-cli' // <- Session ID
 const lang = 'en' // <- Language
-const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co/${session}` // <- endpoint
+const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co` // <- endpoint
 
 let client // <- Define the client
 new Client(endpoint).connect().then(conn => {
@@ -262,7 +262,7 @@ const readline = require('readline').createInterface({
 const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
 const session = 'dialogflow-cli' // <- Session ID
 const lang = 'en' // <- Language
-const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co/${session}` // <- endpoint
+const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co` // <- endpoint
 
 let client // <- Define the client
 new Client(endpoint).connect().then(conn => {
