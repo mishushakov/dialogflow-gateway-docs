@@ -24,4 +24,8 @@ You will be notified via the E-Mail, that you used to sign up
 
 You will get a free upgrade
 
+**How is my usage going to be billed?**
+
+If you are over the free quota, you will get a e-mail on the 1th of the following month containing instructions on how and where to transmit your payment
+
 For any further questions, [contact us](https://ushakov.co/#contact)
