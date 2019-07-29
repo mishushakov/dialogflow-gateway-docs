@@ -1,27 +1,31 @@
-# API Documentation
+# Dialogflow Gateway by Ushakov (Hosted) API
 
-- [Basics](#basics)
+## Contents
+
+- [API](#api)
     - [Response Codes](#response-codes)
+    - [Errors](#errors)
     - [Endpoints](#endpoints)
         - [Base Endpoint](#base-endpoint)
-        - [Endpoint Params](#endpoint-params)
-        - [Example Endpoint](#example-endpoint)
-- [Making Requests](#making-requests)
+        - [Base Endpoint Params](#base-endpoint-variables)
+        - [Base Endpoint Example](#base-endpoint-example)
+- [Requests](#requests)
     - [Retrieving Agents](#retrieving-agents)
         - [Request](#request)
-        - [Request Params](#request-params)
+        - [Request Variables](#request-variables)
         - [Response Body](#response-body)
         - [Example Request](#example-request)
         - [Example Response](#example-response)
     - [Detecting Intents](#detecting-intents)
         - [Request](#request-1)
-        - [Request Params](#request-params-1)
+        - [Request Variables](#request-variables-1)
         - [Request Body](#request-body)
         - [Response Body](#response-body-1)
         - [Example Request](#example-request-1)
         - [Example Response](#example-response-1)
+- [Contact](#contact)
 
-## Basics
+## API
 
 ### Response Codes
 
@@ -34,45 +38,53 @@
 | 500       | Internal Server Error                                                  |
 | 503       | The service is unavailable                                             |
 
+### Errors
+
+Example JSON response, containing error
+
+```json
+{"error": "Could not find your Deployment"}
+```
+
 ### Endpoints
 
 #### Base Endpoint
 
-```http
-https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co
+```
+https://<PROJECT_ID>.gateway.dialogflow.cloud.ushakov.co
 ```
 
-#### Endpoint Params
+#### Base Endpoint Variables
 
-| Param | Description |
-|--------|----------------------------------|
-| APP_ID | Required, Application Identifier |
+| Variable   | Description                  |
+|------------|------------------------------|
+| PROJECT_ID | Required, Project Identifier |
 
-#### Example Endpoint
+#### Base Endpoint Example
 
+```
 https://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
+```
 
-## Making Requests
+## Requests
 
-**Note**: The server supports HSTS and HTTP/2, your insecure (http) requests will be automatically redirected to secure endpoint
-
-### Retrieving Agents
+#### Retrieving Agents
 
 #### Request
 
 ```http
-GET https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co
+GET <BASE_ENDPOINT>
 ```
 
-#### Request Params
+#### Request Variables
 
-| Param | Description |
-|--------|----------------------------------|
-| APP_ID | Required, Application Identifier |
+| Variable      | Description                 |
+|---------------|-----------------------------|
+| BASE_ENDPOINT | Required, Endpoint of Agent |
 
 #### Response Body
 
-If successful, the response body contains an instance of [Agent](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.Agent)
+[Agent](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.Agent)
 
 #### Example Request
 
@@ -104,14 +116,14 @@ GET https://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
 #### Request
 
 ```http
-POST https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co/<SESSION_ID>?format=<bool>
+POST https://<BASE_ENDPOINT>/<SESSION_ID>
 ```
 
-#### Request Params
+#### Request Variables
 
-| Param | Description |
-|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| APP_ID | Required, Application Identifier |
+| Variable | Description |
+|----------|-------------|
+| BASE_ENDPOINT | Required, Endpoint of Agent |
 | SESSION_ID | Required. The name of the session this query is sent to. It can be a random number or some type of user identifier. The length of the session ID must not exceed 36 bytes |
 
 #### Request Body
@@ -120,9 +132,11 @@ POST https://<APP_ID>.gateway.dialogflow.cloud.ushakov.co/<SESSION_ID>?format=<b
 
 #### Response Body
 
-[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentResponse)
+[DetectIntentResponse](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentResponse)
 
 #### Example Request
+
+Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 
 ```http
 POST https://app-of-the-day-9a9f6.gateway.dialogflow.cloud.ushakov.co/test?format=true
@@ -140,18 +154,7 @@ Content-Type: application/json
 
 #### Example Response
 
-```http
-HTTP/1.1 200 OK
-Access-Control-Allow-Headers: Content-Type, Cache-Control
-Access-Control-Allow-Methods: *
-Access-Control-Allow-Origin: *
-Cache-Control: max-age=86400
-Content-Length: 2375
-Content-Type: application/json
-Date: Tue, 16 Apr 2019 10:54:54 GMT
-Server: Dialogflow Gateway
-Connection: close
-
+```json
 {
   "responseId": "85c3d6bd-6f8c-4000-a1ec-fdd6f636b2e8",
   "queryResult": {
@@ -178,5 +181,7 @@ Connection: close
   }
 }
 ```
+
+## Contact
 
 If you have any questions/troubles, regarding the API, please [contact us](https://ushakov.co/#contact)
