@@ -1,6 +1,6 @@
 # Dialogflow Gateway by Ushakov (Hosted) Usage
 
-In this guide we will code our own CLI-Integration for Dialogflow using [Dialogflow Gateway API](api.md) and [Dialogflow Gateway JS SDK](https://www.npmjs.com/package/dialogflow-gateway).
+In this guide we will code our own CLI-Integration for Dialogflow using [Dialogflow Gateway API](./../README.md#api) and [Dialogflow Gateway Realtime API](./../README.md#realtime-api).
 
 ![](images/1*Sax2IOrqX6_09FPS-kqLdA.gif)
 
@@ -24,13 +24,13 @@ Let’s do it!
 
 * Create new directory
 
-* Run npm init or yarn init
+* Run `npm init` or `yarn init`
 
-* Create new file, called index.js
+* Create new file, called `index.js`
 
 * Open the file using your favourite code editor
 
-* Install the node-fetch dependency
+* Install the `node-fetch` dependency
 
 ## Coding the Integration
 
@@ -52,7 +52,7 @@ const readline = require('readline').createInterface({
 const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
 const session = 'dialogflow-cli' // <- Session ID
 const lang = 'en' // <- Language
-const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co/${session}` // <- endpoint
+const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co` // <- endpoint
 ```
 
 ### Step 3: Define the messages loop
@@ -64,6 +64,7 @@ let ask = () => {
     readline.question('You: ', (message) => {
         /* Build a request */
         let request = {
+            session: session,
             queryInput: {
                 text: {
                     text: message,
@@ -100,7 +101,6 @@ ask() // <- Start the messages loop
 ### Final Code
 
 ```js
-
 /* Require dependencies */
 const fetch = require('node-fetch')
 const readline = require('readline').createInterface({
@@ -112,7 +112,7 @@ const readline = require('readline').createInterface({
 const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
 const session = 'dialogflow-cli' // <- Session ID
 const lang = 'en' // <- Language
-const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co/${session}` // <- endpoint
+const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co` // <- endpoint
 
 /* Define the loop */
 let ask = () => {
@@ -120,6 +120,7 @@ let ask = () => {
     readline.question('You: ', (message) => {
         /* Build a request */
         let request = {
+            session: session,
             queryInput: {
                 text: {
                     text: message,
@@ -161,151 +162,60 @@ Type in your message and press Enter:
 
 Your Agent will reply with Dialogflow Response, Webhook or Actions on Google Simple Response! That works 🤘
 
-## Coding the Integration (with JS SDK)
+## Coding the Integration (with Realtime API)
 
-### Step 1: Uninstall node-fetch from previous step
+1. Add [ws](https://www.npmjs.com/package/ws) package
 
-* NPM: `npm uninstall node-fetch`
-
-* Yarn: `yarn remove node-fetch`
-
-### Step 2: Install dialogflow-gateway
-
-* NPM: `npm install dialogflow-gateway`
-
-* Yarn: `yarn add dialogflow-gateway`
-
-### Step 3: Change the code
-
-```js
-
-const { Client } = require('dialogflow-gateway')
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
-/* Define variables */
-const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
-const session = 'dialogflow-cli' // <- Session ID
-const lang = 'en' // <- Language
-const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co` // <- endpoint
-
-let client // <- Define the client
-new Client(endpoint).connect().then(conn => {
-    client = conn // <- Set the client
-    ask() // <- Start the messages loop
-})
-
-/* Define the loop */
-let ask = () => {
-    /* Ask for your message */
-    readline.question('You: ', (message) => {
-        /* Make a request */
-        client.request({
-            session: session,
-            queryInput: {
-                text: {
-                    text: message,
-                    languageCode: lang
-                }
-            }
-        })
-        .then(res => {
-            let messages = res.queryResult.fulfillmentMessages
-            for (let message in messages){
-                /* Display Dialogflow/Webhook Messages */
-                if (messages[message].text) console.log('Bot: ' + messages[message].text.text[0])
-
-                /* Display Actions on Google Simple Response */
-                else if (messages[message].simpleResponses)  console.log('Bot: ' + messages[message].simpleResponses.simpleResponses[0].textToSpeech)
-
-                ask() // <- Restart the messages loop
-            }
-        })
+   `npm install ws` or `yarn add ws`
+2. Change your code to this:
+   ```js
+    /* Require dependencies */
+    const WebSocket = require('ws')
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
     })
-}
-```
 
-Should work as promised!
-
-## Bonus: Let your Mac speak
-
-macOS has a pre-installed speech-synthesis library and executable, called say , try typing it into the Terminal and enter some sentences. You can even change voices by passing the -v parameter to your command.
-
-To integrate this awesome macOS feature, do these little steps:
-
-### Step 1: Require child_process
-
-```js
-const { exec } = require('child_process')
-```
-
-### Step 2: Execute the “say” command
-
-```js
-exec('say hello world')
-```
-
-### Final Code:
-
-```js
-
-const { Client } = require('dialogflow-gateway')
-const { exec } = require('child_process')
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
-/* Define variables */
-const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
-const session = 'dialogflow-cli' // <- Session ID
-const lang = 'en' // <- Language
-const endpoint = `https://${appid}.gateway.dialogflow.cloud.ushakov.co` // <- endpoint
-
-let client // <- Define the client
-new Client(endpoint).connect().then(conn => {
-    client = conn // <- Set the client
-    ask() // <- Start the messages loop
-})
-
-/* Define the loop */
-let ask = () => {
-    /* Ask for your message */
-    readline.question('You: ', (message) => {
-        /* Make a request */
-        client.request({
-            session: session,
-            queryInput: {
-                text: {
-                    text: message,
-                    languageCode: lang
-                }
-            }
-        })
-        .then(res => {
-            let messages = res.queryResult.fulfillmentMessages
-            for (let message in messages){
-                /* Display Dialogflow/Webhook Messages */
-                if (messages[message].text){
-                    exec('say ' + messages[message].text.text[0])
-                    console.log('Bot: ' + messages[message].text.text[0])
-                }
-
-                /* Display Actions on Google Simple Response */
-                else if (messages[message].simpleResponses){
-                    exec('say ' + messages[message].simpleResponses.simpleResponses[0].textToSpeech)
-                    console.log('Bot: ' + messages[message].simpleResponses.simpleResponses[0].textToSpeech)
-                }
-
-                ask() // <- Restart the messages loop
-            }
-        })
+    /* Define variables */
+    const appid = 'dialogflow-web-v2' // <- Google Cloud Project ID
+    const session = 'dialogflow-cli' // <- Session ID
+    const lang = 'en' // <- Language
+    const endpoint = `wss://${appid}.gateway.dialogflow.cloud.ushakov.co/` // <- endpoint
+    const wss = new WebSocket(endpoint)
+    wss.on('message', message => {
+        let res = JSON.parse(message)
+        let messages = res.queryResult.fulfillmentMessages
+        for (let message in messages){
+            /* Display Dialogflow/Webhook Messages */
+            if (messages[message].text) console.log('Bot: ' + messages[message].text.text[0])
+            /* Display Actions on Google Simple Response */
+            else if (messages[message].simpleResponses)  console.log('Bot: ' + messages[message].simpleResponses.simpleResponses[0].textToSpeech)
+            ask() // <- Restart the messages loop
+        }
     })
-}
-```
 
-Our CLI Integration can now talk!
+    /* Define the loop */
+    let ask = () => {
+        /* Ask for your message */
+        readline.question('You: ', (message) => {
+            /* Build a request */
+            let request = {
+                session: session,
+                queryInput: {
+                    text: {
+                        text: message,
+                        languageCode: lang
+                    }
+                }
+            }
+
+            /* Talk to endpoint and return the results */
+            wss.send(JSON.stringify(request))
+        })
+    }
+
+    ask() // <- Start the messages loop
+   ```
+3. Run test it!
 
 I hope you have learned some basics on how to easily create cool and stunning Dialogflow Integrations using Dialogflow Gateway APIs! Now is your turn to make some 😄
