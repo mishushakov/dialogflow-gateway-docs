@@ -1,8 +1,4 @@
-# Dialogflow Gateway
-
-![](https://svgur.com/i/EHv.svg)
-
-Dialogflow Gateway is a backend enabling third-party integrations to securely access the Dialogflow V2 API. Any server, that implements the API (see below) can be refered as "Dialogflow Gateway"
+# Dialogflow Gateway by Ushakov (Hosted) API
 
 ## Contents
 
@@ -42,7 +38,6 @@ Dialogflow Gateway is a backend enabling third-party integrations to securely ac
     - [Response Body](#response-body-2)
     - [Example Request](#example-request-2)
     - [Example Response](#example-response-2)
-- [Implementations](#implementations)
 - [Contact](#contact)
 
 ## API
@@ -70,28 +65,8 @@ Example JSON response, containing error
 
 #### Base Endpoint
 
-Single-Agent scenario
-
 ```
-https://<PROJECT_ID>.com
-```
-
-Multi-Agent scenario using wildcard subdomain
-
-```
-https://<PROJECT_ID>.example.com
-```
-
-Multi-Agent scenario using path parameter
-
-```
-https://example.com/<PROJECT_ID>
-```
-
-Multi-Agent scenario using query parameter
-
-```
-https://example.com?agent=<PROJECT_ID>
+https://<PROJECT_ID>.gateway.dialogflow.cloud.ushakov.co
 ```
 
 #### Base Endpoint Variables
@@ -101,8 +76,6 @@ https://example.com?agent=<PROJECT_ID>
 | PROJECT_ID | Required, Project Identifier |
 
 #### Base Endpoint Example
-
-Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 
 ```
 https://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
@@ -129,8 +102,6 @@ GET <BASE_ENDPOINT>
 [Agent](https://cloud.google.com/dialogflow/docs/reference/rest/v2beta1/projects.agent)
 
 #### Example Request
-
-Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 
 ```http
 GET https://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
@@ -165,7 +136,7 @@ Using session id as path parameter
 POST <BASE_ENDPOINT>/<SESSION_ID>
 ```
 
-Or skip the path parameter and put <SESSION_ID> in the request body
+Or skip the path parameter and put <SESSION_ID> in the request body (preferred)
 
 ```http
 POST <BASE_ENDPOINT>
@@ -187,8 +158,6 @@ POST <BASE_ENDPOINT>
 [DetectIntentResponse](https://cloud.google.com/dialogflow/docs/reference/rest/v2beta1/DetectIntentResponse)
 
 #### Example Request
-
-Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 
 ```http
 POST https://app-of-the-day-9a9f6.gateway.dialogflow.cloud.ushakov.co
@@ -260,28 +229,8 @@ Example error:
 
 #### Base Endpoint
 
-Single-Agent scenario
-
 ```
-wss://<PROJECT_ID>.com
-```
-
-Multi-Agent scenario using wildcard subdomain
-
-```
-wss://<PROJECT_ID>.example.com
-```
-
-Multi-Agent scenario using path parameter
-
-```
-wss://example.com/<PROJECT_ID>
-```
-
-Multi-Agent scenario using query parameter
-
-```
-wss://example.com?agent=<PROJECT_ID>
+wss://<PROJECT_ID>.gateway.dialogflow.cloud.ushakov.co
 ```
 
 #### Base Endpoint Variables
@@ -291,8 +240,6 @@ wss://example.com?agent=<PROJECT_ID>
 | PROJECT_ID | Required, Project Identifier |
 
 #### Base Endpoint Example
-
-Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 
 ```
 wss://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
@@ -382,16 +329,6 @@ ws.on('close', (code, error) => {
   }
 }
 ```
-
-## Implementations
-
-| Title                                   | Developer | Status                      | Homepage                                                                 | Features                                                                                                                                                                | Cloud-based? |
-|-----------------------------------------|-----------|-----------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| Dialogflow Gateway (Hosted)             | Ushakov   | Stable, actively maintained | [https://dialogflow.cloud.ushakov.co](Homepage)                          | Security Features, API Extensions, Realtime API, support, free updates, uptime guarantees, disaster recovery, dashboard, built-in integrations, pay-per-use, free quota | Yes          |
-| Dialogflow Gateway (Enterprise Edition) | Ushakov   | TBA                         | [https://dialogflow.cloud.ushakov.co](Homepage)                          | Self-hosted, premium support, API Extensions, free updates                                                                                                              | No           |
-| Fulfillment Tester                      | Ushakov   | Testing                     | [https://github.com/mishushakov/dialogflow-fulfillment-tester](Homepage) | For testing purposes only                                                                                                                                               | No           |
-
-[Submit your implementation](https://github.com/mishushakov/dialogflow-gateway-docs/pulls)
 
 ## Contact
 

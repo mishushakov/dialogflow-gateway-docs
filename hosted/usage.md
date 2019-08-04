@@ -1,6 +1,6 @@
 # Dialogflow Gateway by Ushakov (Hosted) Usage
 
-In this guide we will code our own CLI-Integration for Dialogflow using [Dialogflow Gateway API](./../README.md#api) and [Dialogflow Gateway Realtime API](./../README.md#realtime-api).
+In this guide we will code our own CLI-Integration for Dialogflow using [Dialogflow Gateway API](api.md.md#api) and [Dialogflow Gateway Realtime API](api.md.md#realtime-api).
 
 ![](images/1*Sax2IOrqX6_09FPS-kqLdA.gif)
 
@@ -216,6 +216,6 @@ Your Agent will reply with Dialogflow Response, Webhook or Actions on Google Sim
 
     ask() // <- Start the messages loop
    ```
-3. Run test it!
+3. Run it!
 
 I hope you have learned some basics on how to easily create cool and stunning Dialogflow Integrations using Dialogflow Gateway APIs! Now is your turn to make some 😄

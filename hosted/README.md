@@ -4,6 +4,7 @@ This directory contains documentation of the hosted version of [Dialogflow Gatew
 
 - [Installation](installation.md)
 - [Configuration](configuration.md)
+- [API](api.md)
 - [Usage](usage.md)
 - [Integrations](integrations.md)
 - [FAQ](faq.md)

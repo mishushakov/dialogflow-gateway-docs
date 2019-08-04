@@ -2,10 +2,10 @@
 
 ## First Party
 
-- [Dialogflow Gateway API](./../README.md#api)
+- [Dialogflow Gateway API](api.md#api)
   ![](./images/gatewayurl.png)
 
-- [Dialogflow Gateway Realtime API](./../README.md#realtime-api)
+- [Dialogflow Gateway Realtime API](api.md#realtime-api)
   ![](./images/gatewayurlrt.png)
 
 - [Dialogflow for Web v2](https://github.com/mishushakov/dialogflow-web-v2)
