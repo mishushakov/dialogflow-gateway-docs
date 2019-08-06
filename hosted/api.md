@@ -130,14 +130,6 @@ GET https://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
 
 #### Request
 
-Using session id as path parameter
-
-```http
-POST <BASE_ENDPOINT>/<SESSION_ID>
-```
-
-Or skip the path parameter and put <SESSION_ID> in the request body (preferred)
-
 ```http
 POST <BASE_ENDPOINT>
 ```
@@ -147,11 +139,10 @@ POST <BASE_ENDPOINT>
 | Variable | Description |
 |----------|-------------|
 | BASE_ENDPOINT | Required, Endpoint of Agent |
-| SESSION_ID | Required. The name of the session this query is sent to. It can be a random number or some type of user identifier. The length of the session ID must not exceed 36 bytes |
 
 #### Request Body
 
-[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rest/v2beta1/projects.agent.sessions/detectIntent#request-body)
+[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
 
 #### Response Body
 
@@ -173,6 +164,8 @@ Content-Type: application/json
   }
 }
 ```
+
+Note: Dialogflow Gateway converts `session` into `projects/<Project ID>/agent/sessions/<Session ID>`. This behaviour is a subject to change
 
 #### Example Response
 
@@ -263,7 +256,7 @@ POST <BASE_ENDPOINT>
 
 #### Request Body
 
-[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rest/v2beta1/projects.agent.sessions/detectIntent#request-body)
+[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
 
 #### Response Body
 
@@ -272,6 +265,7 @@ POST <BASE_ENDPOINT>
 #### Example Request
 
 Note: The examples are in js
+Note: Dialogflow Gateway converts `session` into `projects/<Project ID>/agent/sessions/<Session ID>`. This behaviour is a subject to change
 
 Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 

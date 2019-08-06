@@ -159,14 +159,6 @@ GET https://dialogflow-web-v2.gateway.dialogflow.cloud.ushakov.co
 
 #### Request
 
-Using session id as path parameter
-
-```http
-POST <BASE_ENDPOINT>/<SESSION_ID>
-```
-
-Or skip the path parameter and put <SESSION_ID> in the request body
-
 ```http
 POST <BASE_ENDPOINT>
 ```
@@ -176,11 +168,10 @@ POST <BASE_ENDPOINT>
 | Variable | Description |
 |----------|-------------|
 | BASE_ENDPOINT | Required, Endpoint of Agent |
-| SESSION_ID | Required. The name of the session this query is sent to. It can be a random number or some type of user identifier. The length of the session ID must not exceed 36 bytes |
 
 #### Request Body
 
-[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rest/v2beta1/projects.agent.sessions/detectIntent#request-body)
+[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
 
 #### Response Body
 
@@ -316,7 +307,7 @@ POST <BASE_ENDPOINT>
 
 #### Request Body
 
-[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rest/v2beta1/projects.agent.sessions/detectIntent#request-body)
+[DetectIntentRequest](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
 
 #### Response Body
 
@@ -385,11 +376,11 @@ ws.on('close', (code, error) => {
 
 ## Implementations
 
-| Title                                   | Developer | Status                      | Homepage                                                                 | Features                                                                                                                                                                | Cloud-based? |
-|-----------------------------------------|-----------|-----------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| Dialogflow Gateway (Hosted)             | Ushakov   | Stable, actively maintained | [https://dialogflow.cloud.ushakov.co](Homepage)                          | Security Features, API Extensions, Realtime API, support, free updates, uptime guarantees, disaster recovery, dashboard, built-in integrations, pay-per-use, free quota | Yes          |
-| Dialogflow Gateway (Enterprise Edition) | Ushakov   | TBA                         | [https://dialogflow.cloud.ushakov.co](Homepage)                          | Self-hosted, premium support, API Extensions, free updates                                                                                                              | No           |
-| Fulfillment Tester                      | Ushakov   | Testing                     | [https://github.com/mishushakov/dialogflow-fulfillment-tester](Homepage) | For testing purposes only                                                                                                                                               | No           |
+| Title                                   | Developer | Status                      | Homepage                                                     | Features                                                                                                                                                                | Cloud-based? |
+|-----------------------------------------|-----------|-----------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| Dialogflow Gateway (Hosted)             | Ushakov   | Stable, actively maintained | https://dialogflow.cloud.ushakov.co                          | Security Features, API Extensions, Realtime API, support, free updates, uptime guarantees, disaster recovery, dashboard, built-in integrations, pay-per-use, free quota | Yes          |
+| Dialogflow Gateway (Enterprise Edition) | Ushakov   | TBA                         | https://dialogflow.cloud.ushakov.co                          | Self-hosted, premium support, API Extensions, free updates                                                                                                              | No           |
+| Fulfillment Tester                      | Ushakov   | Testing                     | https://github.com/mishushakov/dialogflow-fulfillment-tester | For testing purposes only                                                                                                                                               | No           |
 
 [Submit your implementation](https://github.com/mishushakov/dialogflow-gateway-docs/pulls)
 
