@@ -41,3 +41,9 @@ No!
 If you are over the free quota, you will get a e-mail on the 1th of the following month containing instructions on how to transmit your payment
 
 For any further questions, [contact us](https://ushakov.co/#contact)
+
+**Why is my integration displayed as "Blocked"?**
+
+![](./images/blocked.png)
+
+Likely, because it violated our ToS and system decided to hold it. Get in touch, to learn why it happened to your project and how you can resolve it

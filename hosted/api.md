@@ -265,6 +265,7 @@ POST <BASE_ENDPOINT>
 #### Example Request
 
 Note: The examples are in js
+
 Note: Dialogflow Gateway converts `session` into `projects/<Project ID>/agent/sessions/<Session ID>`. This behaviour is a subject to change
 
 Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
