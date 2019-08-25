@@ -3,27 +3,27 @@
 ## First Party
 
 - [Dialogflow Gateway API](api.md#api)
-  ![](./images/gatewayurl.png)
+  ![Dialogflow Gateway API (Integration)](./images/gatewayurl.png)
 
 - [Dialogflow Gateway Realtime API](api.md#realtime-api)
-  ![](./images/gatewayurlrt.png)
+  ![Dialogflow Gateway Realtime API (Integration)](./images/gatewayurlrt.png)
 
 - [Dialogflow for Web v2](https://github.com/mishushakov/dialogflow-web-v2)
-  ![](./images/uiurl.png)
+  ![Dialogflow Gateway Dialogflow for Web (Integration)](./images/uiurl.png)
 
-- [DF-BTN](https://github.com/mishushakov/df-btn)
-  ![](./images/embeddeduiurl.png)
+- [df-btn](https://github.com/mishushakov/df-btn)
+  ![Dialogflow Gateway Dialogflow df-btn (Integration)](./images/embeddeduiurl.png)
 
 - [Dialogflow Inbox](https://github.com/mishushakov/dialogflow-inbox)
-  ![](./images/inboxemail.png)
+  ![Dialogflow Gateway Inbox (Integration)](./images/inboxemail.png)
 
 ## Third Party
 
 - [Webhook](./configuration.md#configuring-webhook)
-  ![](./images/webhookurl.png)
+  ![Dialogflow Gateway Webhook (Integration)](./images/webhookurl.png)
 
 - [Chatbase](./configuration.md#connecting-virtual-agent-analytics)
-  ![](./images/chatbaseapikey.png)
+  ![Dialogflow Gateway Chatbase (Integration)](./images/chatbaseapikey.png)
 
 ## Other
 

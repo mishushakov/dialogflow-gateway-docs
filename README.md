@@ -1,6 +1,6 @@
 # Dialogflow Gateway
 
-![](https://svgur.com/i/EHv.svg)
+![Dialogflow Gateway schema](https://svgur.com/i/EHv.svg)
 
 Dialogflow Gateway is a backend enabling third-party integrations to securely access the Dialogflow V2 API. Any server, that implements the API (see below) can be refered as "Dialogflow Gateway"
 

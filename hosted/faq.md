@@ -44,6 +44,6 @@ For any further questions, [contact us](https://ushakov.co/#contact)
 
 **Why is my integration displayed as "Blocked"?**
 
-![](./images/blocked.png)
+![Dialogflow Gateway Blocked](./images/blocked.png)
 
 Likely, because it violated our ToS and system decided to hold it. Get in touch, to learn why it happened to your project and how you can resolve it

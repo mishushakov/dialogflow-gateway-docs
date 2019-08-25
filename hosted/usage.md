@@ -2,7 +2,7 @@
 
 In this guide we will code our own CLI-Integration for Dialogflow using [Dialogflow Gateway API](api.md.md#api) and [Dialogflow Gateway Realtime API](api.md.md#realtime-api).
 
-![](images/1*Sax2IOrqX6_09FPS-kqLdA.gif)
+![Dialogflow Gateway Usage Example (Demo)](images/1*Sax2IOrqX6_09FPS-kqLdA.gif)
 
 It’s a badass idea, because sometimes you can’t have access to your Google Assistant, Web Browser or a Messenger, but still want to process your Messages through Dialogflow 💪
 
@@ -154,11 +154,11 @@ ask() // <- Start the messages loop
 
 Execute node index.js and you should see this:
 
-![](images/1*g7d0ZMyE_ODPiwGqalT_wQ.png)
+![Dialogflow Gateway Usage Example (Console input)](images/1*g7d0ZMyE_ODPiwGqalT_wQ.png)
 
 Type in your message and press Enter:
 
-![](images/1*0zPrr0SOtY9ulOXmWHhXig.png)
+![Dialogflow Gateway Usage Example (Console output)](images/1*0zPrr0SOtY9ulOXmWHhXig.png)
 
 Your Agent will reply with Dialogflow Response, Webhook or Actions on Google Simple Response! That works 🤘
 
