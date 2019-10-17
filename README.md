@@ -315,7 +315,7 @@ POST <BASE_ENDPOINT>
 
 #### Example Request
 
-Note: The examples are in js
+Note: The examples are using NodeJS
 
 Multi-Agent scenario using wildcard subdomain on Dialogflow Gateway by Ushakov (Hosted)
 
@@ -376,14 +376,14 @@ ws.on('close', (code, error) => {
 
 ## Implementations
 
-| Title                                   | Developer | Status                      | Homepage                                                     | Features                                                                                                                                                                | Cloud-based? |
-|-----------------------------------------|-----------|-----------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| Dialogflow Gateway (Hosted)             | Ushakov   | Stable, actively maintained | https://dialogflow.cloud.ushakov.co                          | Security Features, API Extensions, Realtime API, support, free updates, uptime guarantees, disaster recovery, dashboard, built-in integrations, pay-per-use, free quota | Yes          |
-| Dialogflow Gateway (Enterprise Edition) | Ushakov   | TBA                         | https://dialogflow.cloud.ushakov.co                          | Self-hosted, premium support, API Extensions, free updates                                                                                                              | No           |
-| Fulfillment Tester                      | Ushakov   | Testing                     | https://github.com/mishushakov/dialogflow-fulfillment-tester | For testing purposes only                                                                                                                                               | No           |
+| Title                                   | Developer | Status                      | Homepage                                                     | Features                                                                                                               | Cloud-based? |
+|-----------------------------------------|-----------|-----------------------------|--------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|--------------|
+| Dialogflow Gateway (Hosted)             | Ushakov   | Stable, actively maintained | https://dialogflow.cloud.ushakov.co                          | Support, free updates, uptime guarantees, disaster recovery, dashboard, built-in integrations, pay-per-use, free quota | Yes          |
+| Dialogflow Gateway (Enterprise Edition) | Ushakov   | TBA                         | https://dialogflow.cloud.ushakov.co                          | Self-hosted, premium support, free updates                                                                             | No           |
+| Fulfillment Tester                      | Ushakov   | Testing                     | https://github.com/mishushakov/dialogflow-fulfillment-tester | For testing purposes only                                                                                              | No           |
 
 [Submit your implementation](https://github.com/mishushakov/dialogflow-gateway-docs/pulls)
 
 ## Contact
 
-If you have any questions/troubles, regarding the API, please [contact us](https://ushakov.co/#contact)
+If you have any questions or troubles regarding the API, please [contact us](https://ushakov.co/#contact)

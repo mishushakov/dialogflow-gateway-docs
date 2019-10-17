@@ -264,7 +264,7 @@ POST <BASE_ENDPOINT>
 
 #### Example Request
 
-Note: The examples are in js
+Note: The examples are using NodeJS
 
 Note: Dialogflow Gateway converts `session` into `projects/<Project ID>/agent/sessions/<Session ID>`. This behaviour is a subject to change
 
@@ -327,4 +327,4 @@ ws.on('close', (code, error) => {
 
 ## Contact
 
-If you have any questions/troubles, regarding the API, please [contact us](https://ushakov.co/#contact)
+If you have any questions or troubles regarding the API, please [contact us](https://ushakov.co/#contact)
