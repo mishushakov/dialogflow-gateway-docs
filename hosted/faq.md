@@ -20,17 +20,9 @@ No, we don't have to. The services are billed after amount of messages you sent 
 
 No, only the count of messages you sent us is stored for our billing purposes
 
-**What happens if the service shuts down?**
-
-Every affected customer will get a free self-hosted variant
-
 **What happens when you change the API or Terms?**
 
 You will be notified via the E-Mail, that you used to sign up
-
-**What if Dialogflow V2 is deprecated?**
-
-You will get a free upgrade
 
 **Will my integrations stop working after i exceed free quota?**
 
